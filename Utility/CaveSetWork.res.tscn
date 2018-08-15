@@ -1,0 +1,453 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/cave1.png" type="Texture" id=1]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="CaveFloor" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 103.129, 11.0797 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CaveFloor" index="0"]
+
+position = Vector2( 0.0140686, -0.0175533 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveFloor/StaticBody2D" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallTopLeft" type="Sprite" parent="." index="1"]
+
+position = Vector2( 9.8811, 9.53304 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="CaveWallTopLeft" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0.00918579, -0.000989914 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallTopLeft/StaticBody2D8" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallTopRight" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 46.2028, 10.5107 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="CaveWallTopRight" index="0"]
+
+position = Vector2( 0.0243111, 0.0484486 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallTopRight/StaticBody2D6" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallBottomLeft" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 10.61, 45.8799 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="CaveWallBottomLeft" index="0"]
+
+position = Vector2( 0.0259228, 0.0413361 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallBottomLeft/StaticBody2D7" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallBottomRight" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 46.5143, 46.685 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 48, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="CaveWallBottomRight" index="0"]
+
+position = Vector2( 0.0620651, -0.0905228 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallBottomRight/StaticBody2D8" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallBottom" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 28.4356, 46.2525 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="CaveWallBottom" index="0"]
+
+position = Vector2( -0.0338268, -0.0154495 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallBottom/StaticBody2D6" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallCenter" type="Sprite" parent="." index="6"]
+
+position = Vector2( 29.3087, 28.1578 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="CaveWallCenter" index="0"]
+
+position = Vector2( -0.0271034, -0.0833893 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallCenter/StaticBody2D3" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallLeft" type="Sprite" parent="." index="7"]
+
+position = Vector2( 9.58524, 28.192 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 80, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="CaveWallLeft" index="0"]
+
+position = Vector2( 0.0271626, -0.0458298 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallLeft/StaticBody2D4" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallRight" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 46.7484, 28.079 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="CaveWallRight" index="0"]
+
+position = Vector2( -0.0441399, 0.0657578 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallRight/StaticBody2D5" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallBottomRightC" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 66.3057, 10.8872 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="CaveWallBottomRightC" index="0"]
+
+position = Vector2( -0.0199966, 0.046833 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallBottomRightC/StaticBody2D5" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallTop" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 28.4805, 9.8575 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="CaveWallTop" index="0"]
+
+position = Vector2( 0.000423431, -0.0352936 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallTop/StaticBody2D7" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallBottomLeftC" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 83.8059, 10.9769 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="CaveWallBottomLeftC" index="0"]
+
+position = Vector2( -0.00309753, 0.0645561 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallBottomLeftC/StaticBody2D4" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallTopLeftC" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 83.6772, 28.4771 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="CaveWallTopLeftC" index="0"]
+
+position = Vector2( -0.0114441, 0.0143585 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallTopLeftC/StaticBody2D2" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+[node name="CaveWallTopRightC" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 66.3261, 28.877 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="CaveWallTopRightC" index="0"]
+
+position = Vector2( -0.020401, -0.0432091 )
+scale = Vector2( 0.250884, 0.25043 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CaveWallTopRightC/StaticBody2D3" index="0"]
+
+build_mode = 1
+polygon = PoolVector2Array( -31.8842, -31.7681, 31.8182, -31.8228, 31.9203, 31.9377, -31.8833, 31.9377 )
+
+

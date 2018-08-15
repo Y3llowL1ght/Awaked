@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/electric_circuit.png" type="Texture" id=1]
+
+
+[node name="MainMenu" type="Node" index="0"]
+
+[node name="BackGround" type="Sprite" parent="." index="0"]
+
+position = Vector2( 512.705, 298.761 )
+scale = Vector2( 1.2818, 1.19779 )
+texture = ExtResource( 1 )
+
+[node name="Start" type="Button" parent="BackGround" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -382.0
+margin_top = 64.0
+margin_right = -222.0
+margin_bottom = 137.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start"
+flat = false
+align = 1
+
+[node name="Exit" type="Button" parent="BackGround" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -382.0
+margin_top = 145.0
+margin_right = -222.0
+margin_bottom = 218.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Exit"
+flat = false
+align = 1
+
+
