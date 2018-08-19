@@ -64,12 +64,13 @@ _sections_unfolded = [ "Range", "Shadow", "Z Index" ]
 
 [node name="MapManager" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 MapWidth = 64
-MapHeight = 30
-DebugMode = true
-Seed = 23453123
+MapHeight = 64
+DebugMode = false
+Seed = 0
 
 [node name="CaveFloor" type="TileMap" parent="MapManager" index="0"]
 
@@ -204,8 +205,6 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-
-[connection signal="UpdateMapCells" from="MapManager" to="MapManager/CaveWalls" method="UpdateCells"]
 
 [connection signal="pressed" from="LightUI/UpdateMap" to="MapManager" method="UpdateMap"]
 
