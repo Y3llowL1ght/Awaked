@@ -20,14 +20,7 @@ public class CaveWalls : TileMap
     */
 
 
-    public override void _Ready()
-    {
-        GD.Print("CaveWallsScriptReady");
-        
-        
-        
-    }
-    
+    //Updating All Cells
     public void UpdateCells(int MapBorderX, int MapBorderY){
 
     GD.Print("Updating Cells...");
@@ -119,7 +112,7 @@ public class CaveWalls : TileMap
         GD.Print("Cells Updated!");
     }
 
-
+    //Checking 4 joined cells 
     public int CheckCellAdj(int x, int y){
 
          int LeftN = (GetCell(x - 1, y) !=-1 ? GetCell(x - 1, y):0) > 0 ? 2:0;
@@ -130,7 +123,7 @@ public class CaveWalls : TileMap
         return fin;
 
     }
-
+    //Checking 4 diagonally placed cells
     public int CheckCellDiag(int x, int y){
 
          int LeftTopN = (GetCell(x - 1, y - 1) !=-1 ? GetCell(x - 1, y):0) > 0 ? 2:0;
@@ -141,10 +134,7 @@ public class CaveWalls : TileMap
         return fin;
 
     }
-//    public override void _Process(float delta)
-//    {
-//        // Called every frame. Delta is time since last frame.
-//        // Update game logic here.
-//        
-//    }
+
 }
+
+

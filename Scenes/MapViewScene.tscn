@@ -5,7 +5,7 @@
 [ext_resource path="res://Utility/CaveSet.res" type="TileSet" id=3]
 [ext_resource path="res://Scripts/CaveWalls.cs" type="Script" id=4]
 
-[node name="MainScene" type="Node" index="0"]
+[node name="MapViewScene" type="Node" index="0"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
@@ -64,12 +64,11 @@ _sections_unfolded = [ "Range", "Shadow", "Z Index" ]
 
 [node name="MapManager" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 MapWidth = 64
-MapHeight = 64
-DebugMode = false
+MapHeight = 32
+DebugMode = true
 Seed = 0
 
 [node name="CaveFloor" type="TileMap" parent="MapManager" index="0"]
@@ -205,6 +204,8 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
+
+[connection signal="UpdateMapCells" from="MapManager" to="MapManager/CaveWalls" method="UpdateCells"]
 
 [connection signal="pressed" from="LightUI/UpdateMap" to="MapManager" method="UpdateMap"]
 
