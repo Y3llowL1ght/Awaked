@@ -3,6 +3,7 @@ using System;
 using MapGenerator;
 public class MapManager : Node
 {
+    //Public Fields
     [Export]
     public int MapWidth, MapHeight;
     [Export]
@@ -11,12 +12,15 @@ public class MapManager : Node
     public int Seed;
     public int[,] Map;
 
+    //Signals
     [Signal]
     delegate void UpdateMapCells(int MapBorderX, int MapBorderY);
 
+    //Private Fields
     TileMap CaveWalls;
     TileMap CaveFloor;
     MapGenerator.MapGenerator Generator;
+    
     public override void _Ready()
     {
        Map = new int[MapWidth,MapHeight];
@@ -36,7 +40,8 @@ public class MapManager : Node
     public void GenerateMap(){
     
      ResetMap();
-     Seed = ((TextEdit)GetNode("../LightUI/Seed")).Text.GetHashCode();
+     
+     Seed = ((TextEdit)GetNode("../Camera2D/LightUI/AllContainer/SeedContainer/Seed")).Text.GetHashCode();
      GD.Print("Generating Map with seed: ", Seed, "...");
      
      
@@ -80,10 +85,5 @@ public class MapManager : Node
             }
         }
     }
-//    public override void _Process(float delta)
-//    {
-//        // Called every frame. Delta is time since last frame.
-//        // Update game logic here.
-//        
-//    }
+        
 }

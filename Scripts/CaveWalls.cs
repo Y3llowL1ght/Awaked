@@ -24,6 +24,7 @@ public class CaveWalls : TileMap
     public void UpdateCells(int MapBorderX, int MapBorderY){
 
     GD.Print("Updating Cells...");
+    
 
      for (int y = 0; y <= MapBorderY; y++)
      {
