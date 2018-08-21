@@ -19,13 +19,13 @@ public class MainMenu : Node
 
         GD.Print("Starting map tools");
         GetTree().ChangeScene("res://Scenes/MapViewScene.tscn");
-
+        
     }
 
     public void ExitGame()
     {
         GD.Print("Exiting...");
         GetTree().Quit();
-
+      
     }
 }

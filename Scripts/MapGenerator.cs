@@ -16,7 +16,7 @@ public class MapGenerator {
 
 	int[,] map;
 
-	public int[,] GenerateMap(int seed) {
+	public int[,] GenerateMap(string seed) {
 
 		map = new int[width,height];
 		RandomFillMap(seed);
@@ -27,7 +27,7 @@ public class MapGenerator {
         return map;
 	}
 
-    public MapGenerator(int _width, int _height, int _seed){
+    public MapGenerator(int _width, int _height){
 
      width = _width;
 	 height = _height;
@@ -35,7 +35,7 @@ public class MapGenerator {
 
     }
 
-	void RandomFillMap(int seed) {
+	void RandomFillMap(string seed) {
 		
 
 		System.Random pseudoRandom = new System.Random(seed.GetHashCode());

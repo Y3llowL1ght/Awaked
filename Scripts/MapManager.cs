@@ -9,7 +9,7 @@ public class MapManager : Node
     [Export]
     public bool DebugMode;
     [Export]
-    public int Seed;
+    public string Seed;
     public int[,] Map;
 
     //Signals
@@ -27,7 +27,7 @@ public class MapManager : Node
 
        CaveWalls = (TileMap)GetNode("CaveWalls");
        CaveFloor = (TileMap)GetNode("CaveFloor");
-       Generator = new MapGenerator.MapGenerator(MapWidth,MapHeight,Seed);
+       Generator = new MapGenerator.MapGenerator(MapWidth,MapHeight);
         if (!DebugMode)
         {
             ResetMap();
@@ -37,11 +37,12 @@ public class MapManager : Node
         GD.Print("MapManagerReady");
     }
 
+    //Generates map with the given seed
     public void GenerateMap(){
     
      ResetMap();
      
-     Seed = ((TextEdit)GetNode("../Camera2D/LightUI/AllContainer/SeedContainer/Seed")).Text.GetHashCode();
+     Seed = ((MapViewerUI)GetNode("../Camera2D/MapViewerUI")).Seed;
      GD.Print("Generating Map with seed: ", Seed, "...");
      
      
