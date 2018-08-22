@@ -9,23 +9,40 @@ public class MainMenu : Node
 
     public override void _Ready()
     {
-        // Called every time the node is added to the scene.
-        // Initialization here
+        GD.Print("MainMenu Ready:");
         
     }
 
     public void StartMapViewer()
     {
 
-        GD.Print("Starting map tools");
-        GetTree().ChangeScene("res://Scenes/MapViewScene.tscn");
+        GD.Print("Exiting MainMenu");
+        GD.Print("Starting map tools...");
+        GetTree().ChangeScene("res://Scenes/MapTools.tscn");
         
     }
 
     public void ExitGame()
     {
+        GD.Print("Exiting MainMenu");
         GD.Print("Exiting...");
         GetTree().Quit();
+      
+    }
+
+    public void NewGame()
+    {
+        GD.Print("Exiting MainMenu");
+        GD.Print("New Game button pressed...");
+        //do something
+      
+    }
+
+    public void LoadGame()
+    {
+        GD.Print("Exiting MainMenu");
+        GD.Print("Load Game button pressed...");
+        //do someting
       
     }
 }

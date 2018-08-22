@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/MapViewerUI.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/MapToolsUI.cs" type="Script" id=1]
 
-[node name="MapViewerUI" type="PanelContainer"]
+[node name="MapToolsUI" type="PanelContainer"]
 
 modulate = Color( 0.792969, 0.647385, 0.647385, 1 )
 anchor_left = 0.0
@@ -239,10 +239,6 @@ _sections_unfolded = [ "Anchor", "Caret", "Rect", "Size Flags" ]
 [connection signal="pressed" from="AllContainer/MenuThings/SaveMapButton" to="." method="SaveMap"]
 
 [connection signal="pressed" from="AllContainer/MenuThings/LoadMapButton" to="." method="LoadMap"]
-
-[connection signal="pressed" from="AllContainer/MapViewerThings/GenerateMap" to="." method="GenerateMapButtonPressed"]
-
-[connection signal="pressed" from="AllContainer/MapViewerThings/UpdateMap" to="." method="UpdateMapButtonPressed"]
 
 [connection signal="text_changed" from="AllContainer/MapViewerThings/Seed" to="." method="ChangeSeed"]
 

@@ -42,7 +42,7 @@ public class MapManager : Node
     
      ResetMap();
      
-     Seed = ((MapViewerUI)GetNode("../Camera2D/MapViewerUI")).Seed;
+     Seed = ((MapToolsUI)GetNode("../Camera2D/MapToolsUI")).Seed;
      GD.Print("Generating Map with seed: ", Seed, "...");
      
      

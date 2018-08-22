@@ -249,6 +249,10 @@ texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NewGameButton" to="." method="NewGame"]
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LoadGameButton" to="." method="LoadGame"]
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartMapGenButton" to="." method="StartMapViewer"]
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ExitButton" to="." method="ExitGame"]

@@ -54,7 +54,7 @@
     <Compile Include="Scripts\MainMenu.cs" />
     <Compile Include="Scripts\MapManager.cs" />
     <Compile Include="Scripts\MapGenerator.cs" />
-    <Compile Include="Scripts\MapViewerUI.cs" />
+    <Compile Include="Scripts\MapToolsUI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
