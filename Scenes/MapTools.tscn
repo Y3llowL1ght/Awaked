@@ -7,9 +7,6 @@
 
 [node name="MapManager" parent="." index="0" instance=ExtResource( 1 )]
 
-DebugMode = false
-Seed = null
-
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 position = Vector2( 515.725, 299.8 )
@@ -41,13 +38,18 @@ _sections_unfolded = [ "Z Index" ]
 [node name="MapToolsUI" parent="Camera2D" index="0" instance=ExtResource( 2 )]
 
 margin_left = -504.0
-margin_top = -284.0
+margin_top = -289.0
 margin_right = -282.0
-margin_bottom = -202.0
+margin_bottom = -207.0
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MapViewerThings/GenerateMap" to="MapManager" method="GenerateMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/SaveMapButton" to="MapManager" method="SaveMap"]
+
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/LoadMapButton" to="MapManager" method="LoadMap"]
+
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MapViewerThings/GenerateMap" to="MapManager" method="CreateMap"]
 
 [connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MapViewerThings/UpdateMap" to="MapManager" method="UpdateMap"]
 
 
+[editable path="MapManager"]
 [editable path="Camera2D/MapToolsUI"]

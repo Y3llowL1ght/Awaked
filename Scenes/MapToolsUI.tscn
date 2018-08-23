@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/MapToolsUI.cs" type="Script" id=1]
 
-[node name="MapToolsUI" type="PanelContainer"]
+[node name="MapToolsUI" type="PanelContainer" index="0"]
 
 modulate = Color( 0.792969, 0.647385, 0.647385, 1 )
 anchor_left = 0.0
@@ -169,7 +169,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "GenerateMap"
+text = "CreateMap"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Size Flags" ]
@@ -194,7 +194,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "UpdateMap"
+text = "RemoveMe"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Size Flags" ]
@@ -235,10 +235,6 @@ caret_moving_by_right_click = true
 _sections_unfolded = [ "Anchor", "Caret", "Rect", "Size Flags" ]
 
 [connection signal="pressed" from="AllContainer/MenuThings/ExitToMMButton" to="." method="ToMainMenu"]
-
-[connection signal="pressed" from="AllContainer/MenuThings/SaveMapButton" to="." method="SaveMap"]
-
-[connection signal="pressed" from="AllContainer/MenuThings/LoadMapButton" to="." method="LoadMap"]
 
 [connection signal="text_changed" from="AllContainer/MapViewerThings/Seed" to="." method="ChangeSeed"]
 

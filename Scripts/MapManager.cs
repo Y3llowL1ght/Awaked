@@ -1,16 +1,12 @@
 using Godot;
 using System;
-using MapGenerator;
+using MapSystem;
 public class MapManager : Node
 {
     //Public Fields
-    [Export]
-    public int MapWidth, MapHeight;
-    [Export]
-    public bool DebugMode;
-    [Export]
-    public string Seed;
-    public int[,] Map;
+    
+    public Map CurrentMap;
+    
 
     //Signals
     [Signal]
@@ -19,43 +15,47 @@ public class MapManager : Node
     //Private Fields
     TileMap CaveWalls;
     TileMap CaveFloor;
-    MapGenerator.MapGenerator Generator;
     
     public override void _Ready()
     {
-       Map = new int[MapWidth,MapHeight];
+       
 
        CaveWalls = (TileMap)GetNode("CaveWalls");
        CaveFloor = (TileMap)GetNode("CaveFloor");
-       Generator = new MapGenerator.MapGenerator(MapWidth,MapHeight);
-        if (!DebugMode)
-        {
-            ResetMap();
-        }
 
   
         GD.Print("MapManagerReady");
     }
 
     //Generates map with the given seed
-    public void GenerateMap(){
+    public void CreateMap(){
     
-     ResetMap();
      
-     Seed = ((MapToolsUI)GetNode("../Camera2D/MapToolsUI")).Seed;
-     GD.Print("Generating Map with seed: ", Seed, "...");
+     Vector2 size = new Vector2(64,32);
+     string seed = ((MapToolsUI)GetNode("../Camera2D/MapToolsUI")).Seed;
+     GD.Print("Creating new Map with seed: ", seed, " and size of:", size, "...");
      
-     
-     Map = Generator.GenerateMap(Seed);
+     CurrentMap = new Map("default",seed,size,true);
+     CurrentMap.SaveMap();
 
-        for (int y = 0; y < MapHeight; y++)
+        
+     GD.Print("Map generated!");
+     ShowMap();
+    }
+
+    public void ShowMap(){
+        //Resetting tilemaps
+        ResetVisualMap();
+        //Setting walls
+        for (int y = 0; y < CurrentMap.Size.y; y++)
         {
-            for (int x = 0; x < MapWidth; x++)
+            for (int x = 0; x < CurrentMap.Size.x; x++)
             {
-                if (Map[x,y] == 1)
+                if (CurrentMap.CaveMap[x,y] == 1)
                 {
                    CaveWalls.SetCell(x,y,6); 
-                }else if (Map[x,y] == 0)
+                }
+                else if (CurrentMap.CaveMap[x,y] == 0)
                 {
                     CaveWalls.SetCell(x,y,-1); 
                 }
@@ -63,22 +63,17 @@ public class MapManager : Node
                 
             }
         }
-     GD.Print("Map generated!");
-    }
 
-    public void UpdateMap(){
-
-        EmitSignal(nameof(UpdateMapCells), MapWidth, MapHeight);
+        //Updating tilemap tiles
+        EmitSignal(nameof(UpdateMapCells), CurrentMap.Size.x, CurrentMap.Size.y);
     }
 
 
-    public void ResetMap(){
+    public void ResetVisualMap(){
 
-        
-
-        for (int y = 0; y < MapHeight; y++)
+        for (int y = 0; y < CurrentMap.Size.y; y++)
         {
-            for (int x = 0; x < MapWidth; x++)
+            for (int x = 0; x < CurrentMap.Size.x; x++)
             {
                 CaveWalls.SetCell(x,y,-1);
                 CaveFloor.SetCell(x,y,0);
@@ -86,5 +81,21 @@ public class MapManager : Node
             }
         }
     }
+
+     public void SaveMap()
+    {
+        CurrentMap.SaveMap();
+        GD.Print("SaveMap pressed");
+        
+    }
+
+    public void LoadMap()
+    {
+        //CurrentMap.LoadMap();
+        ShowMap();
+        GD.Print("LoadMap Pressed");
+
+    }
+
         
 }

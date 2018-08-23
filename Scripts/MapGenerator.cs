@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections;
 using System;
-namespace MapGenerator
+namespace MapSystem
 {
     
 

@@ -1,0 +1,6 @@
+D:\Projects\Awaked\.mono\temp\bin\Debug\Awaked.dll
+D:\Projects\Awaked\.mono\temp\bin\Debug\Awaked.pdb
+D:\Projects\Awaked\.mono\temp\obj\Debug\Awaked.csprojAssemblyReference.cache
+D:\Projects\Awaked\.mono\temp\obj\Debug\Awaked.csproj.CoreCompileInputs.cache
+D:\Projects\Awaked\.mono\temp\obj\Debug\Awaked.dll
+D:\Projects\Awaked\.mono\temp\obj\Debug\Awaked.pdb

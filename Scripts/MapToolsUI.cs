@@ -27,18 +27,6 @@ public class MapToolsUI : Node
         GetTree().ChangeScene("res://Scenes/MainMenu.tscn");
     }
 
-    public void SaveMap()
-    {
-        GD.Print("SaveMap pressed");
-        
-    }
-
-    public void LoadMap()
-    {
-
-        GD.Print("LoadMap Pressed");
-
-    }
-
+   
     
 }
