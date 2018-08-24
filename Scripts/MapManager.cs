@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using MapSystem;
+
 public class MapManager : Node
 {
     //Public Fields
@@ -22,8 +23,7 @@ public class MapManager : Node
 
        CaveWalls = (TileMap)GetNode("CaveWalls");
        CaveFloor = (TileMap)GetNode("CaveFloor");
-
-  
+	  
         GD.Print("MapManagerReady");
     }
 

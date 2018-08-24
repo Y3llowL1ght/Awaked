@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Newtonsoft.Json;
 
 namespace MapSystem
 {
@@ -22,6 +23,7 @@ namespace MapSystem
             if (generate)
             {
                 GenerateMap();
+                
             }
 
         }
@@ -58,7 +60,6 @@ namespace MapSystem
             var mapdata = Save();
 
             GD.Print(JSON.Print(mapdata));
-
             //mapsave.StoreLine();
             mapsave.Close();
             
