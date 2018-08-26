@@ -1,18 +1,18 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/MapToolsUI.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/UI Scripts/MapToolsUI.cs" type="Script" id=1]
 
-[node name="MapToolsUI" type="PanelContainer" index="0"]
+[node name="MapToolsUI" type="PanelContainer"]
 
 modulate = Color( 0.792969, 0.647385, 0.647385, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 7.0
-margin_right = 242.0
-margin_bottom = 89.0
+margin_left = 26.0
+margin_top = 12.0
+margin_right = 331.0
+margin_bottom = 154.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -33,8 +33,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 215.0
-margin_bottom = 75.0
+margin_right = 298.0
+margin_bottom = 135.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -50,14 +50,14 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 104.0
-margin_bottom = 68.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-alignment = 1
+alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="ExitToMMButton" type="Button" parent="AllContainer/MenuThings" index="0"]
@@ -83,7 +83,7 @@ text = "To main menu"
 flat = false
 align = 1
 
-[node name="SaveMapButton" type="Button" parent="AllContainer/MenuThings" index="1"]
+[node name="PanelContainer" type="PanelContainer" parent="AllContainer/MenuThings" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -91,6 +91,64 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 24.0
 margin_right = 104.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AllContainer/MenuThings/PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 97.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="LoadMapButton" type="Button" parent="AllContainer/MenuThings/PanelContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 90.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Load map"
+flat = false
+align = 1
+
+[node name="SaveMapButton" type="Button" parent="AllContainer/MenuThings/PanelContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 90.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -107,39 +165,93 @@ text = "Save map"
 flat = false
 align = 1
 
-[node name="LoadMapButton" type="Button" parent="AllContainer/MenuThings" index="2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="AllContainer/MenuThings/PanelContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 48.0
-margin_right = 104.0
-margin_bottom = 68.0
+margin_right = 90.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Label" type="Label" parent="AllContainer/MenuThings/PanelContainer/VBoxContainer/VBoxContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 90.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Savename:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SavenameField" type="LineEdit" parent="AllContainer/MenuThings/PanelContainer/VBoxContainer/VBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 90.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
-mouse_default_cursor_shape = 0
+mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Load map"
-flat = false
-align = 1
+text = "default"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
 
-[node name="MapViewerThings" type="VBoxContainer" parent="AllContainer" index="1"]
+[node name="PanelContainer" type="PanelContainer" parent="AllContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 108.0
-margin_right = 208.0
-margin_bottom = 68.0
+margin_right = 291.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Grow Direction", "Size Flags" ]
+
+[node name="MapViewerThings" type="VBoxContainer" parent="AllContainer/PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 176.0
+margin_bottom = 121.0
 rect_min_size = Vector2( 100, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -147,24 +259,24 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 1
+alignment = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="GenerateMap" type="Button" parent="AllContainer/MapViewerThings" index="0"]
+[node name="CreateMap" type="Button" parent="AllContainer/PanelContainer/MapViewerThings" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 100.0
+margin_right = 169.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -174,68 +286,231 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="UpdateMap" type="Button" parent="AllContainer/MapViewerThings" index="1"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="AllContainer/PanelContainer/MapViewerThings" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 24.0
-margin_right = 100.0
-margin_bottom = 44.0
+margin_right = 169.0
+margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "RemoveMe"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Size Flags" ]
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
 
-[node name="Seed" type="TextEdit" parent="AllContainer/MapViewerThings" index="2"]
+[node name="SeedLabel" type="Label" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 48.0
-margin_right = 100.0
-margin_bottom = 68.0
-rect_min_size = Vector2( 10, 20 )
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 45, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Seed:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SeedField" type="LineEdit" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 49.0
+margin_right = 169.0
+margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Seed"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="AllContainer/PanelContainer/MapViewerThings" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 52.0
+margin_right = 169.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-text = "Seed"
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
-override_selected_font_color = false
+alignment = 0
+
+[node name="NameLabel" type="Label" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 45, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Name:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="NameField" type="LineEdit" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 49.0
+margin_right = 169.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "default"
+focus_mode = 2
 context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = false
-caret_block_mode = false
+placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
-caret_moving_by_right_click = true
-_sections_unfolded = [ "Anchor", "Caret", "Rect", "Size Flags" ]
+caret_position = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AllContainer/PanelContainer/MapViewerThings" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 80.0
+margin_right = 169.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="SizeLabel" type="Label" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 45, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Size:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SizeXField" type="LineEdit" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 49.0
+margin_right = 107.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "64"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="SizeYField" type="LineEdit" parent="AllContainer/PanelContainer/MapViewerThings/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 111.0
+margin_right = 169.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "32"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
 
 [connection signal="pressed" from="AllContainer/MenuThings/ExitToMMButton" to="." method="ToMainMenu"]
 
-[connection signal="text_changed" from="AllContainer/MapViewerThings/Seed" to="." method="ChangeSeed"]
+[connection signal="text_changed" from="AllContainer/MenuThings/PanelContainer/VBoxContainer/VBoxContainer2/SavenameField" to="." method="ChangeSaveName"]
+
+[connection signal="text_changed" from="AllContainer/PanelContainer/MapViewerThings/HBoxContainer2/SeedField" to="." method="ChangeSeed"]
+
+[connection signal="text_changed" from="AllContainer/PanelContainer/MapViewerThings/HBoxContainer3/NameField" to="." method="ChangeMapName"]
+
+[connection signal="text_changed" from="AllContainer/PanelContainer/MapViewerThings/HBoxContainer/SizeXField" to="." method="ChangeSize"]
+
+[connection signal="text_changed" from="AllContainer/PanelContainer/MapViewerThings/HBoxContainer/SizeYField" to="." method="ChangeSize"]
 
 

@@ -16,14 +16,19 @@ public class MapManager : Node
     //Private Fields
     TileMap CaveWalls;
     TileMap CaveFloor;
+
+    //References
+    MapToolsUI MapToolsUI;
     
     public override void _Ready()
     {
        
+        CurrentMap = new Map();
+        CaveWalls = (TileMap)GetNode("CaveWalls");
+        CaveFloor = (TileMap)GetNode("CaveFloor");
+	    MapToolsUI = (MapToolsUI)GetNode("../Camera2D/MapToolsUI");
 
-       CaveWalls = (TileMap)GetNode("CaveWalls");
-       CaveFloor = (TileMap)GetNode("CaveFloor");
-	  
+
         GD.Print("MapManagerReady");
     }
 
@@ -32,11 +37,10 @@ public class MapManager : Node
     
      
      Vector2 size = new Vector2(64,32);
-     string seed = ((MapToolsUI)GetNode("../Camera2D/MapToolsUI")).Seed;
-     GD.Print("Creating new Map with seed: ", seed, " and size of:", size, "...");
      
-     CurrentMap = new Map("default",seed,size,true);
-     CurrentMap.SaveMap();
+     GD.Print("Creating new Map with seed: ", MapToolsUI.Seed, " and size of:", MapToolsUI.Size, "...");
+     
+     CurrentMap = new Map(MapToolsUI.Name, MapToolsUI.Seed, MapToolsUI.Size, true);
 
         
      GD.Print("Map generated!");
@@ -84,15 +88,25 @@ public class MapManager : Node
 
      public void SaveMap()
     {
-        CurrentMap.SaveMap();
+        MapSaveManager.SaveMap(CurrentMap, MapToolsUI.Savename);
         GD.Print("SaveMap pressed");
         
     }
 
     public void LoadMap()
     {
-        //CurrentMap.LoadMap();
-        ShowMap();
+        ResetVisualMap();
+        CurrentMap = MapSaveManager.LoadMap(MapToolsUI.Savename);
+
+        if (CurrentMap != null)
+        {
+            ShowMap();
+        }else
+        {
+            GD.Print("Map loading failed");
+        }
+        
+        
         GD.Print("LoadMap Pressed");
 
     }

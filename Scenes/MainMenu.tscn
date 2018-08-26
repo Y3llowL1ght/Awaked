@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/UI Scripts/MainMenu.cs" type="Script" id=1]
 [ext_resource path="res://Resources/serveimage.png" type="Texture" id=2]
 
-[node name="MenuUI" type="MarginContainer" index="0"]
+[node name="MenuUI" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -109,7 +109,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="StartMapGenButton" type="Button" parent="HBoxContainer/VBoxContainer" index="2"]
+[node name="StartMapToolsButton" type="Button" parent="HBoxContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -253,7 +253,7 @@ _sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LoadGameButton" to="." method="LoadGame"]
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartMapGenButton" to="." method="StartMapViewer"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartMapToolsButton" to="." method="StartMapTools"]
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ExitButton" to="." method="ExitGame"]
 

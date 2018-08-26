@@ -42,13 +42,11 @@ margin_top = -289.0
 margin_right = -282.0
 margin_bottom = -207.0
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/SaveMapButton" to="MapManager" method="SaveMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/LoadMapButton" to="MapManager" method="LoadMap"]
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/LoadMapButton" to="MapManager" method="LoadMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/SaveMapButton" to="MapManager" method="SaveMap"]
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MapViewerThings/GenerateMap" to="MapManager" method="CreateMap"]
-
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MapViewerThings/UpdateMap" to="MapManager" method="UpdateMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/PanelContainer/MapViewerThings/CreateMap" to="MapManager" method="CreateMap"]
 
 
 [editable path="MapManager"]

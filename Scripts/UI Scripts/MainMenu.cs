@@ -13,7 +13,7 @@ public class MainMenu : Node
         
     }
 
-    public void StartMapViewer()
+    public void StartMapTools()
     {
 
         GD.Print("Exiting MainMenu");

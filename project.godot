@@ -13,6 +13,10 @@ config_version=3
 config/name="Awaked"
 run/main_scene="res://Scenes/MapTools.tscn"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "." )
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
