@@ -27,10 +27,12 @@ namespace StructSystem
         {
             
             SList.Add(structure);
+            int testS = structure.GPosition.y;
+            int testE = structure.GPosition.y + structure.GSize.y;
 
-            for (int y = structure.GPosition.y; y < structure.GSize.y; y++)
+            for (int y = structure.GPosition.y; y < structure.GPosition.y + structure.GSize.y; y++)
             {
-                for (int x = structure.GPosition.x; y < structure.GSize.x; y++)
+                for (int x = structure.GPosition.x; x < structure.GPosition.x + structure.GSize.x; x++)
                 {
 
                     TypeIdMap[x,y] = structure.TypeID;
@@ -51,7 +53,7 @@ namespace StructSystem
                 for (int x = position.x; x < position.x + type.Size.x; x++)
                 {
 
-                    if (TypeIdMap[x,y] != 0 || TypeIdMap[x,y] == 1)
+                    if (TypeIdMap[x,y] != 0)
                     {
                         Result = false;
                     }

@@ -20,6 +20,9 @@ namespace StructSystem
             GManager = (GameManager)GetParent();
             SetupSMap();
             CreateStructure(new GridVector(20,10),GetStructureType(1));
+
+            CreateStructure(new GridVector(22, 11), GetStructureType(1));
+
         }
 
         //Setting SMap class
@@ -83,10 +86,10 @@ namespace StructSystem
             switch (TypeId)
             {
                 case 1:
-                return new StructureType("Test",1,"res://Scenes/Structures/PlaceHolder1.tscn", new GridVector(4,4));
+                return new StructureType("Test",2,"res://Scenes/Structures/PlaceHolder1.tscn", new GridVector(4,4));
                 
                 default:
-                return new StructureType("default:error",0,"res://Scenes/Structures/PlaceHolder1.tscn",new GridVector(1,1));
+                return new StructureType("default:error",3,"res://Scenes/Structures/PlaceHolder1.tscn",new GridVector(1,1));
             }
 
         }
