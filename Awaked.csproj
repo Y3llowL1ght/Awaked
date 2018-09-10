@@ -58,16 +58,17 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-
+    <Compile Include="Scripts\GameScripts\StructManager.cs" />
+    <Compile Include="Scripts\GameScripts\GameManager.cs" />
+    <Compile Include="Scripts\GameScripts\StructScripts\TestStructure.cs" />
     <Compile Include="Scripts\Map%20Scripts\CaveWalls.cs" />
     <Compile Include="Scripts\Map%20Scripts\MapManager.cs" />
     <Compile Include="Scripts\Map%20Scripts\Map.cs" />
+    <Compile Include="Scripts\GameScripts\StructSystem.cs" />
     <Compile Include="Scripts\Map%20Scripts\MapGenerator.cs" />
     <Compile Include="Scripts\Map%20Scripts\MapSaveManager.cs" />
-
     <Compile Include="Scripts\UI%20Scripts\MainMenu.cs" />
     <Compile Include="Scripts\UI%20Scripts\MapToolsUI.cs" />
-    
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

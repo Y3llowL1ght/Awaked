@@ -16,7 +16,6 @@ namespace MapSystem
             path = mapsave.GetPathAbsolute();
             mapsave.Close();
 
-            GD.Print(System.IO.File.Exists(path));
 
             if (System.IO.File.Exists(path))
             {
