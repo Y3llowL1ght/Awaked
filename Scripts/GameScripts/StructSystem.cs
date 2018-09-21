@@ -27,8 +27,6 @@ namespace StructSystem
         {
             
             SList.Add(structure);
-            int testS = structure.GPosition.y;
-            int testE = structure.GPosition.y + structure.GSize.y;
 
             for (int y = structure.GPosition.y; y < structure.GPosition.y + structure.GSize.y; y++)
             {
@@ -60,10 +58,7 @@ namespace StructSystem
 
                 }
             }
-
-
             return Result;
-
         }
 
     }
@@ -75,24 +70,26 @@ namespace StructSystem
 
         public StructManager SManager;
         public Sprite SNode;
+        public string SName;
+
         public GridVector GPosition;
         public GridVector GSize;
-        public string SName;
+        
         public int TypeID;
         public int ID;
 
         public virtual void SetupStructure(){}
-
         public void FinalizeNodeCreation(StructureType type, GridVector position)
         {
+            //Node size
             float posmultiplier = 16;
+            //Position multiplier, 1 node = 16 units;
             SName = type.SName;
             TypeID = type.TypeID;
             GSize = type.Size;
             GPosition = position;
             Vector2 newPosition = new Vector2(GPosition.x * posmultiplier, GPosition.y * posmultiplier);
             SetPosition(newPosition);
-
         }
     }
 
@@ -107,7 +104,6 @@ namespace StructSystem
 
         public StructureType(string name, int typeid,string path, GridVector size)
         {
-
                 SName = name;
                 TypeID = typeid;
                 ScenePath = path;

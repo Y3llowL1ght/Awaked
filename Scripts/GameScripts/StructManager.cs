@@ -19,10 +19,9 @@ namespace StructSystem
             
             GManager = (GameManager)GetParent();
             SetupSMap();
-            CreateStructure(new GridVector(20,10),GetStructureType(1));
-
-            CreateStructure(new GridVector(22, 11), GetStructureType(1));
-
+            CreateStructure(new GridVector(20,10),GetStructureType(2));
+            CreateStructure(new GridVector(25, 10), GetStructureType(2));
+            CreateStructure(new GridVector(30, 10), GetStructureType(3));
         }
 
         //Setting SMap class
@@ -41,24 +40,7 @@ namespace StructSystem
                     CurrentSMap.TypeIdMap[x,y] = GManager.MapManager.CurrentMap.CaveMap[x,y];
                 }
             }
-
         }
-
-        public void CreateTestStructure(){
-            
-
-            var scene = (PackedScene)ResourceLoader.Load(GetStructureType(1).ScenePath);
-            var node = scene.Instance();
-            AddChild(node);
-            var test = ((TestStructure)node.GetNode(""));
-            test.Test();
-            //var test = (Sprite)node;
-            //test.SetPosition(new Vector2(0,0));
-            GD.Print(test.Position);
-            
-
-        }
-
 
         public void CreateStructure(GridVector position, StructureType type){
 
@@ -85,11 +67,14 @@ namespace StructSystem
 
             switch (TypeId)
             {
-                case 1:
+                case 2:
                 return new StructureType("Test",2,"res://Scenes/Structures/PlaceHolder1.tscn", new GridVector(4,4));
                 
+                case 3:
+                return new StructureType("Test2",3,"res://Scenes/Structures/PlaceHolder2.tscn", new GridVector(1,1));
+
                 default:
-                return new StructureType("default:error",3,"res://Scenes/Structures/PlaceHolder1.tscn",new GridVector(1,1));
+                return new StructureType("default:error",9999,"res://Scenes/Structures/PlaceHolder1.tscn",new GridVector(1,1));
             }
 
         }
