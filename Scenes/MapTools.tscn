@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/MapManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MapToolsUI.tscn" type="PackedScene" id=2]
 
-[node name="MapToolsScene" type="Node"]
+[node name="MapToolsScene" type="Node" index="0"]
 
 [node name="MapManager" parent="." index="0" instance=ExtResource( 1 )]
 

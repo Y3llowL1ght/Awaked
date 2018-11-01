@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using StructSystem;
+using StatSystem;
 
 public class GameManager : Node
 {
