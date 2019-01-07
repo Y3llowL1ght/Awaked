@@ -66,6 +66,7 @@
     <Compile Include="Scripts\Map%20Scripts\MapManager.cs" />
     <Compile Include="Scripts\Map%20Scripts\Map.cs" />
     <Compile Include="Scripts\GameScripts\StructSystem.cs" />
+    <Compile Include="Scripts\GameScripts\StatSystem.cs" />
     <Compile Include="Scripts\Map%20Scripts\MapGenerator.cs" />
     <Compile Include="Scripts\Map%20Scripts\MapSaveManager.cs" />
     <Compile Include="Scripts\UI%20Scripts\MainMenu.cs" />

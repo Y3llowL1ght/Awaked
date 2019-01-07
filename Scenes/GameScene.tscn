@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/StructureManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MapManager.tscn" type="PackedScene" id=4]
 
-[node name="GameScene" type="Node" index="0"]
+[node name="GameScene" type="Node"]
 
 [node name="GameManager" type="Node" parent="." index="0"]
 
@@ -22,6 +22,10 @@ z_index = 3
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="MapManager" parent="GameManager" index="2" instance=ExtResource( 4 )]
+
+[node name="StatManager" type="Node" parent="." index="1"]
+
+script = ExtResource( 2 )
 
 
 [editable path="GameManager/StructManager"]

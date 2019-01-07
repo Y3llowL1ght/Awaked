@@ -15,6 +15,7 @@ namespace StructSystem
         public GameManager GManager;
 
 
+        //Инициализация
         public void Initialize(){
             
             GManager = (GameManager)GetParent();
@@ -22,6 +23,7 @@ namespace StructSystem
             CreateStructure(new GridVector(20,10),GetStructureType(2));
             CreateStructure(new GridVector(25, 10), GetStructureType(2));
             CreateStructure(new GridVector(30, 10), GetStructureType(3));
+            
         }
 
         //Setting SMap class
@@ -42,6 +44,7 @@ namespace StructSystem
             }
         }
 
+        //Create structure with a type at coordinates
         public void CreateStructure(GridVector position, StructureType type){
 
             if (CurrentSMap.CanFitStructureHere(type, position))
@@ -49,7 +52,7 @@ namespace StructSystem
                 //Creating structure
                 var packedStructure = (PackedScene)ResourceLoader.Load(type.ScenePath);
                 var instancedNode = packedStructure.Instance();
-                AddChild(instancedNode);
+                AddChild(instancedNode, true);
                 var structure = (Structure)(instancedNode.GetNode(""));
                 structure.FinalizeNodeCreation(type, position);
                 CurrentSMap.AddStructure(structure);
@@ -63,6 +66,7 @@ namespace StructSystem
 
         }
 
+        //StructureType Loader, basically a list of hardcoded structures WIP?
         public StructureType GetStructureType(int TypeId){
 
             switch (TypeId)

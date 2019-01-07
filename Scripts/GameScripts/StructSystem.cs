@@ -14,7 +14,7 @@ namespace StructSystem
 
         public int[,] TypeIdMap;
         public Vector2 SMapSize;
-        List<Structure> SList;
+        public List<Structure> SList;
 
         public StructMap(Vector2 _SMapSize)
         {
