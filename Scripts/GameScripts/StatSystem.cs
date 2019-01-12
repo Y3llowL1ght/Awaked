@@ -110,7 +110,7 @@ namespace StatSystem
         public static Stat GetStatType(string Name){
 
             //Getting absolute path instead of user://
-            string path = "user://" + "stat_config" + ".json";
+            string path = "res://" + "config/stat_config" + ".json";
             File statsfile = new File();
             statsfile.Open(path, (int)File.ModeFlags.Read);
             string statspath = statsfile.GetPathAbsolute();

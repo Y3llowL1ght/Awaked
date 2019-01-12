@@ -14,6 +14,7 @@ public class TestStructure : Structure
         SetupStructure();
         testholder = new StatHolder();
         testholder.AddStat(StatLoader.GetStatType("Health"));
+        testholder.AddStat(StatLoader.GetStatType("Energy"));
         Test();
     }
 
@@ -21,7 +22,9 @@ public class TestStructure : Structure
         
         GD.Print("Its me! teststructure! here goes my teststat: ");
         GD.Print(testholder.GetStat("Health").Name);
-        
+        ProgressBar bar = (ProgressBar)GetNode("PlaceHolder1/pg1");
+        PrintTree();
+        //bar.Value = 90;
 
     }
 
