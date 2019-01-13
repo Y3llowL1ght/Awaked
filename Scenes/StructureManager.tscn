@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameScripts/StructManager.cs" type="Script" id=1]
+
+[node name="StructManager" type="Node2D"]
+
+position = Vector2( 209.482, 163.449 )
+script = ExtResource( 1 )
+
+

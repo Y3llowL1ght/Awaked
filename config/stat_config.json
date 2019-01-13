@@ -1,0 +1,35 @@
+{
+    "default": {
+        "Name": "default",
+        "Units": "units",
+        "Capacity": 100,
+        "IsStatic": false,
+        "Value": 0
+    },
+
+    "Health": {
+        "Name": "Health",
+        "Units": "HP",
+        "Capacity": 500,
+        "IsStatic": false,
+        "Value": 500
+    },
+
+    "Energy": {
+        "Name": "Energy",
+        "Units": "EU",
+        "Capacity": 1000,
+        "IsStatic": false,
+        "Value": 0
+    },
+
+    "Metal": {
+        "Name": "Metal",
+        "Units": "units",
+        "Capacity": 1000,
+        "IsStatic": false,
+        "Value": 0
+    }
+
+
+}

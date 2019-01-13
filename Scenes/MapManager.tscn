@@ -4,8 +4,7 @@
 [ext_resource path="res://Utility/CaveSet.res" type="TileSet" id=2]
 [ext_resource path="res://Scripts/Map Scripts/CaveWalls.cs" type="Script" id=3]
 
-
-[node name="MapManager" type="Node" index="0"]
+[node name="MapManager" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Placeholders/Placeholder1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/GameScripts/StructScripts/TestStructure.cs" type="Script" id=2]
+
+[node name="PlaceHolder1" type="Sprite" index="0"]
+
+position = Vector2( 0.421143, 0.815737 )
+texture = ExtResource( 1 )
+centered = false
+region_rect = Rect2( 16, 16, 32, 32 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="pg1" type="ProgressBar" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 21.0
+margin_right = 60.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 20.0
+exp_edit = false
+rounded = false
+percent_visible = false
+
+

@@ -7,7 +7,7 @@ public class MapManager : Node
     //Public Fields
     
     public Map CurrentMap;
-    
+    public bool MapToolsMode;
 
     //Signals
     [Signal]
@@ -19,17 +19,37 @@ public class MapManager : Node
 
     //References
     MapToolsUI MapToolsUI;
+    GameManager GManager;
     
     public override void _Ready()
     {
        
-        CurrentMap = new Map();
         CaveWalls = (TileMap)GetNode("CaveWalls");
         CaveFloor = (TileMap)GetNode("CaveFloor");
-	    MapToolsUI = (MapToolsUI)GetNode("../Camera2D/MapToolsUI");
+        GD.Print(GetParent().Name);
+
+        if (GetParent().Name == "MapToolsScene")
+        {
+            GD.Print("MapManager: MapToolsMode");
+            MapToolsMode = true;
+            MapToolsUI = (MapToolsUI)GetNode("../Camera2D/MapToolsUI");
+        }else
+        {
+            GD.Print("MapManager says: implement gamescene mode u fucking retard");
+            GManager = (GameManager)GetParent();
+        }
+	    
 
 
         GD.Print("MapManagerReady");
+    }
+
+    public void Initialize(){
+
+
+
+
+        GD.Print("MapManagerInitialized");
     }
 
     //Generates map with the given seed
@@ -86,30 +106,69 @@ public class MapManager : Node
         }
     }
 
-     public void SaveMap()
+    public void SaveMap(string savename)
     {
-        MapSaveManager.SaveMap(CurrentMap, MapToolsUI.Savename);
+        //MapTools mode
+        if (MapToolsMode)
+        {
+            MapSaveManager.SaveMap(CurrentMap, MapToolsUI.Savename);
+        }else
+        {
+            MapSaveManager.SaveMap(CurrentMap, savename);
+        }
+       
         GD.Print("SaveMap pressed");
         
     }
 
-    public void LoadMap()
+    //MapTools mode
+    public void SaveMapMT()
     {
-        ResetVisualMap();
-        CurrentMap = MapSaveManager.LoadMap(MapToolsUI.Savename);
+        MapSaveManager.SaveMap(CurrentMap, MapToolsUI.Savename);
+        GD.Print("SaveMap pressed");
+    }
 
+    //MapLoading not in maptools
+    public void LoadMap(string savename)
+    {
+        //Was there any map before?
+        if (CurrentMap != null)
+        {
+            ResetVisualMap();
+        }
+
+            CurrentMap = MapSaveManager.LoadMap(savename);
+ 
         if (CurrentMap != null)
         {
             ShowMap();
+
         }else
         {
             GD.Print("Map loading failed");
         }
-        
-        
-        GD.Print("LoadMap Pressed");
-
     }
 
+    //MapTools mode
+    public void LoadMapMT()
+    {
+        //Was there any map before?
+        if (CurrentMap != null)
+        {
+            ResetVisualMap();
+        }
         
+        
+            CurrentMap = MapSaveManager.LoadMap(MapToolsUI.Savename);
+
+        if (CurrentMap != null)
+        {
+            ShowMap();
+
+        }else
+        {
+            GD.Print("Map loading failed");
+        }
+    }
+      
 }

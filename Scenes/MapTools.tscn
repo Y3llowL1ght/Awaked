@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/MapManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MapToolsUI.tscn" type="PackedScene" id=2]
 
-[node name="MapViewScene" type="Node" index="0"]
+[node name="MapToolsScene" type="Node"]
 
 [node name="MapManager" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -42,9 +42,9 @@ margin_top = -289.0
 margin_right = -282.0
 margin_bottom = -207.0
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/LoadMapButton" to="MapManager" method="LoadMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/LoadMapButton" to="MapManager" method="LoadMapMT"]
 
-[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/SaveMapButton" to="MapManager" method="SaveMap"]
+[connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/SaveMapButton" to="MapManager" method="SaveMapMT"]
 
 [connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/PanelContainer/MapViewerThings/CreateMap" to="MapManager" method="CreateMap"]
 
