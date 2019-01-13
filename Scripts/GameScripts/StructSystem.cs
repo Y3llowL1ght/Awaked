@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace StructSystem
 {
@@ -95,7 +96,7 @@ namespace StructSystem
 
 
 
-    public struct StructureType
+    public class StructureType
     {
         public string SName;
         public int TypeID;
@@ -108,6 +109,29 @@ namespace StructSystem
                 TypeID = typeid;
                 ScenePath = path;
                 Size = size;
+        }
+    }
+
+    public static class STypeLoader
+    {
+        public static StructureType GetStructureType(string Name)
+        {
+
+            //Getting absolute path instead of user://
+            string path = "res://" + "config/struct_list" + ".json";
+            File structfile = new File();
+            structfile.Open(path, (int)File.ModeFlags.Read);
+            string structpath = structfile.GetPathAbsolute();
+            structfile.Close();
+
+            System.Collections.Generic.Dictionary<string, StructureType> structs = JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, StructureType>>(System.IO.File.ReadAllText(structpath));
+            if (structs[Name] == null)
+            {
+
+                return structs["Test"];
+            }
+
+            return structs[Name];
         }
     }
 

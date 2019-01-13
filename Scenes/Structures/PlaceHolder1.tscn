@@ -3,7 +3,7 @@
 [ext_resource path="res://Resources/Placeholders/Placeholder1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameScripts/StructScripts/TestStructure.cs" type="Script" id=2]
 
-[node name="PlaceHolder1" type="Sprite"]
+[node name="PlaceHolder1" type="Sprite" index="0"]
 
 position = Vector2( 0.421143, 0.815737 )
 texture = ExtResource( 1 )
@@ -32,7 +32,7 @@ min_value = 0.0
 max_value = 100.0
 step = 1.0
 page = 0.0
-value = 0.0
+value = 20.0
 exp_edit = false
 rounded = false
 percent_visible = false

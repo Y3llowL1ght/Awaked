@@ -23,10 +23,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="MapManager" parent="GameManager" index="2" instance=ExtResource( 4 )]
 
-[node name="StatManager" type="Node" parent="." index="1"]
-
-script = ExtResource( 2 )
-
 
 [editable path="GameManager/StructManager"]
 [editable path="GameManager/MapManager"]

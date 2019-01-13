@@ -8,6 +8,7 @@ public class TestStructure : Structure
 
 
     StatHolder testholder;
+    ProgressBar bar;
     
     public override void _Ready()
     {
@@ -22,10 +23,23 @@ public class TestStructure : Structure
         
         GD.Print("Its me! teststructure! here goes my teststat: ");
         GD.Print(testholder.GetStat("Health").Name);
-        ProgressBar bar = (ProgressBar)GetNode("PlaceHolder1/pg1");
-        PrintTree();
-        //bar.Value = 90;
+        bar = (ProgressBar)GetNode("pg1");
+        if (bar != null)
+        {
+            bar.Value = 10;
+            bar.MaxValue = (float)testholder.Stats["Energy"].Capacity;
+        }
+        
 
+    }
+
+    public override void _PhysicsProcess(float delta){
+        testholder.Stats["Energy"].Increase(100/60);
+        if (bar != null)
+        {
+            bar.Value = (float)testholder.Stats["Energy"].Value;
+        }
+        
     }
 
     public override void SetupStructure(){

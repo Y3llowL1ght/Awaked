@@ -20,9 +20,9 @@ namespace StructSystem
             
             GManager = (GameManager)GetParent();
             SetupSMap();
-            CreateStructure(new GridVector(20,10),GetStructureType(2));
-            CreateStructure(new GridVector(25, 10), GetStructureType(2));
-            CreateStructure(new GridVector(30, 10), GetStructureType(3));
+            CreateStructure(new GridVector(20,10),STypeLoader.GetStructureType("Test"));
+            CreateStructure(new GridVector(25, 10),STypeLoader.GetStructureType("Test"));
+            CreateStructure(new GridVector(30, 10), STypeLoader.GetStructureType("Test2"));
             
         }
 
@@ -66,22 +66,7 @@ namespace StructSystem
 
         }
 
-        //StructureType Loader, basically a list of hardcoded structures WIP?
-        public StructureType GetStructureType(int TypeId){
-
-            switch (TypeId)
-            {
-                case 2:
-                return new StructureType("Test",2,"res://Scenes/Structures/PlaceHolder1.tscn", new GridVector(4,4));
-                
-                case 3:
-                return new StructureType("Test2",3,"res://Scenes/Structures/PlaceHolder2.tscn", new GridVector(1,1));
-
-                default:
-                return new StructureType("default:error",9999,"res://Scenes/Structures/PlaceHolder1.tscn",new GridVector(1,1));
-            }
-
-        }
+        
 
     
     }

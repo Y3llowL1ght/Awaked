@@ -1,0 +1,22 @@
+{
+    "Test": {
+        "SName" : "Test",
+        "TypeID" : 2,
+        "ScenePath" : "res://Scenes/Structures/PlaceHolder1.tscn", 
+        "Size" : {"x" : 4, "y" : 4}
+    },
+
+    "Test2": {
+        "SName": "Test2",
+        "TypeID": 2,
+        "ScenePath": "res://Scenes/Structures/PlaceHolder2.tscn",
+        "Size": {
+            "x": 1,
+            "y": 1
+        }
+    }
+
+    
+
+
+}
