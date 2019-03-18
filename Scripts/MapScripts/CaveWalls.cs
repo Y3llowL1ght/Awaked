@@ -1,7 +1,7 @@
 using Godot;
 using System;
-
-public class CaveWalls : TileMap
+namespace MapSystem{
+public class CaveWalls : Godot.TileMap
 {
     /*
     CENTER - 6
@@ -18,7 +18,7 @@ public class CaveWalls : TileMap
     BOTLC - 11
     BOTRC - 9
     */
-
+ 
 
     //Updating All Cells
     public void UpdateCells(int MapBorderX, int MapBorderY){
@@ -136,6 +136,7 @@ public class CaveWalls : TileMap
 
     }
 
+}
 }
 
 

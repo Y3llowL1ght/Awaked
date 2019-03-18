@@ -26,9 +26,10 @@ namespace StructSystem
 
         public void AddStructure(Structure structure)
         {
-            
+            //adding structur to the list
             SList.Add(structure);
 
+            //Setting IdMap cells
             for (int y = structure.GPosition.y; y < structure.GPosition.y + structure.GSize.y; y++)
             {
                 for (int x = structure.GPosition.x; x < structure.GPosition.x + structure.GSize.x; x++)
@@ -39,6 +40,21 @@ namespace StructSystem
                 }
             }
 
+        }
+
+        public void DeleteStructure(Structure structure){
+            //Removing from the list
+            SList.Remove(structure);
+
+            for (int y = structure.GPosition.y; y < structure.GPosition.y + structure.GSize.y; y++)
+            {
+                for (int x = structure.GPosition.x; x < structure.GPosition.x + structure.GSize.x; x++)
+                {
+                    //Clearing tiles
+                    TypeIdMap[x, y] = 0;
+
+                }
+            }
         }
 
 
@@ -91,6 +107,10 @@ namespace StructSystem
             GPosition = position;
             Vector2 newPosition = new Vector2(GPosition.x * posmultiplier, GPosition.y * posmultiplier);
             SetPosition(newPosition);
+        }
+
+        public virtual void Delete(){
+
         }
     }
 

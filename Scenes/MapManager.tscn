@@ -1,58 +1,24 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Map Scripts/MapManager.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/MapScripts/MapManager.cs" type="Script" id=1]
 [ext_resource path="res://Utility/CaveSet.res" type="TileSet" id=2]
-[ext_resource path="res://Scripts/Map Scripts/CaveWalls.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/MapScripts/CaveWalls.cs" type="Script" id=3]
+
 
 [node name="MapManager" type="Node"]
-
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="CaveFloor" type="TileMap" parent="." index="0"]
-
-mode = 0
+[node name="CaveFloor" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell", "Z Index" ]
 
-[node name="CaveWalls" type="TileMap" parent="." index="1"]
-
+[node name="CaveWalls" type="TileMap" parent="."]
 z_index = 1
-mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Cell", "Pause", "Transform", "Z Index" ]
-
-[connection signal="UpdateMapCells" from="." to="CaveWalls" method="UpdateCells"]
-
 

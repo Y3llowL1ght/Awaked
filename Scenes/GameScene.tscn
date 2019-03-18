@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/StructureManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MapManager.tscn" type="PackedScene" id=4]
 
-[node name="GameScene" type="Node" index="0"]
+[node name="GameScene" type="Node"]
 
 [node name="GameManager" type="Node" parent="." index="0"]
 

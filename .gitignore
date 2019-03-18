@@ -1,1 +1,9 @@
 .mono
+.mono/temp/bin/Tools/Awaked.dll
+.mono/temp/bin/Tools/Awaked.pdb
+.mono/temp/obj/Debug/Awaked.csproj.CoreCompileInputs.cache
+.mono/temp/obj/Debug/Awaked.csprojAssemblyReference.cache
+.mono/temp/obj/Tools/Awaked.csproj.CoreCompileInputs.cache
+.mono/temp/obj/Tools/Awaked.csproj.FileListAbsolute.txt
+.mono/temp/obj/Tools/Awaked.dll
+.mono/temp/obj/Tools/Awaked.pdb

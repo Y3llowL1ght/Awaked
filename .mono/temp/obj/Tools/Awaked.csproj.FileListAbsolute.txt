@@ -5,7 +5,5 @@ D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.dll
 D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.pdb
 D:\Projects\Awaked\.mono\temp\bin\Tools\Newtonsoft.Json.dll
 D:\Projects\Awaked\.mono\temp\bin\Tools\Newtonsoft.Json.xml
-D:\Projects\Awaked\.mono\temp\bin\Tools\System.ServiceModel.Internals.dll
-D:\Projects\Awaked\.mono\temp\bin\Tools\System.Transactions.dll
-D:\Projects\Awaked\.mono\temp\bin\Tools\System.EnterpriseServices.dll
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csprojResolveAssemblyReference.cache
+D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csprojAssemblyReference.cache
+D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csproj.CopyComplete
