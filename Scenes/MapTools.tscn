@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/MapManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MapToolsUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/serveimage.png" type="Texture" id=3]
 
 [node name="MapToolsScene" type="Node"]
 
@@ -16,6 +17,13 @@ margin_left = -504.0
 margin_top = -289.0
 margin_right = -282.0
 margin_bottom = -207.0
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 565.382, 176.591 )
+texture = ExtResource( 3 )
+texture_scale = 0.45
+color = Color( 0.670588, 0.0745098, 0.0745098, 1 )
+energy = 2.65
 
 [connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/LoadMapButton" to="MapManager" method="LoadMapMT"]
 [connection signal="pressed" from="Camera2D/MapToolsUI/AllContainer/MenuThings/PanelContainer/VBoxContainer/SaveMapButton" to="MapManager" method="SaveMapMT"]

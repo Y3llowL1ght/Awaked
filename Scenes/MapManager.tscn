@@ -4,10 +4,8 @@
 [ext_resource path="res://Utility/CaveSet.res" type="TileSet" id=2]
 [ext_resource path="res://Scripts/MapScripts/CaveWalls.cs" type="Script" id=3]
 
-
 [node name="MapManager" type="Node"]
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause" ]
 
 [node name="CaveFloor" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -20,5 +18,5 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Cell", "Pause", "Transform", "Z Index" ]
 
+[connection signal="UpdateMapCells" from="." to="CaveWalls" method="UpdateCells"]

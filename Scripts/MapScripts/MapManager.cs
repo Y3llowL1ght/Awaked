@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using MapSystem;
+using SaveSystem;
 
 public class MapManager : Node
 {
@@ -54,9 +55,6 @@ public class MapManager : Node
 
     //Generates map with the given seed
     public void CreateMap(){
-    
-     
-     Vector2 size = new Vector2(64,32);
      
      GD.Print("Creating new Map with seed: ", MapToolsUI.Seed, " and size of:", MapToolsUI.Size, "...");
      
@@ -68,8 +66,10 @@ public class MapManager : Node
     }
 
     public void ShowMap(){
+
         //Resetting tilemaps
         ResetVisualMap();
+
         //Setting walls
         for (int y = 0; y < CurrentMap.Size.y; y++)
         {
@@ -137,8 +137,10 @@ public class MapManager : Node
             ResetVisualMap();
         }
 
-            CurrentMap = MapSaveManager.LoadMap(savename);
- 
+        //loading in the map
+        CurrentMap = MapSaveManager.LoadMap(savename);
+
+        //Showing it in
         if (CurrentMap != null)
         {
             ShowMap();
@@ -157,10 +159,11 @@ public class MapManager : Node
         {
             ResetVisualMap();
         }
-        
-        
-            CurrentMap = MapSaveManager.LoadMap(MapToolsUI.Savename);
 
+        //loading in the map
+        CurrentMap = MapSaveManager.LoadMap(MapToolsUI.Savename);
+
+        //Showing it in
         if (CurrentMap != null)
         {
             ShowMap();

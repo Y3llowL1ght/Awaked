@@ -6,7 +6,6 @@ using StatSystem;
 public class TestStructure : Structure
 {
 
-
     StatHolder testholder;
     ProgressBar bar;
     
@@ -23,6 +22,7 @@ public class TestStructure : Structure
         
         GD.Print("Its me! teststructure! here goes my teststat: ");
         GD.Print(testholder.GetStat("Health").Name);
+        
         bar = (ProgressBar)GetNode("pg1");
         if (bar != null)
         {

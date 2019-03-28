@@ -2,6 +2,7 @@ using Godot;
 using System;
 using StructSystem;
 using StatSystem;
+using SaveSystem;
 
 public class GameManager : Node
 {
@@ -26,8 +27,8 @@ public class GameManager : Node
         MapManager.LoadMap("default");
         
         StructManager.Initialize();
-        
-
+        GameSaveManager.CreateSave("test");
+        GameSaveManager.LoadSave("test");
     }
 
 

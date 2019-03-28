@@ -70,7 +70,7 @@
     <Compile Include="Scripts\GameScripts\StructSystem.cs" />
     <Compile Include="Scripts\GameScripts\StatSystem.cs" />
     <Compile Include="Scripts\MapScripts\MapGenerator.cs" />
-    <Compile Include="Scripts\MapScripts\MapSaveManager.cs" />
+    <Compile Include="Scripts\MapScripts\SaveManager.cs" />
     <Compile Include="Scripts\UIScripts\MainMenu.cs" />
     <Compile Include="Scripts\UIScripts\MapToolsUI.cs" />
 

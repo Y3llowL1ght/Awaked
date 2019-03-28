@@ -7,22 +7,19 @@
 
 [node name="GameScene" type="Node"]
 
-[node name="GameManager" type="Node" parent="." index="0"]
-
+[node name="GameManager" type="Node" parent="."]
 script = ExtResource( 1 )
 
-[node name="StatManager" type="Node2D" parent="GameManager" index="0"]
-
+[node name="StatManager" type="Node2D" parent="GameManager"]
 script = ExtResource( 2 )
 
-[node name="StructManager" parent="GameManager" index="1" instance=ExtResource( 3 )]
-
+[node name="StructManager" parent="GameManager" instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
 z_index = 3
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="MapManager" parent="GameManager" index="2" instance=ExtResource( 4 )]
+[node name="MapManager" parent="GameManager" instance=ExtResource( 4 )]
 
 
 [editable path="GameManager/StructManager"]
+
 [editable path="GameManager/MapManager"]
