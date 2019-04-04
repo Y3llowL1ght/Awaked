@@ -55,7 +55,8 @@ public class MapToolsUI : Node
     public void ToMainMenu()
     {
         GD.Print("Exiting to main menu...");
-        GetTree().ChangeScene("res://Scenes/MainMenu.tscn");
+        SceneManager smanager = (SceneManager)GetNode("/root/SceneManager");
+        smanager.SwitchScene((PackedScene)GD.Load("res://Scenes/MainMenu.tscn"));
     }
 
    

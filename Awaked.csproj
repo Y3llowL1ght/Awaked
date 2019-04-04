@@ -71,10 +71,9 @@
     <Compile Include="Scripts\GameScripts\StatSystem.cs" />
     <Compile Include="Scripts\MapScripts\MapGenerator.cs" />
     <Compile Include="Scripts\MapScripts\SaveManager.cs" />
+    <Compile Include="Scripts\SceneManager.cs" />
     <Compile Include="Scripts\UIScripts\MainMenu.cs" />
     <Compile Include="Scripts\UIScripts\MapToolsUI.cs" />
-
-
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

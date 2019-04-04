@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Awaked"
 run/main_scene="res://Scenes/MapTools.tscn"
 
+[autoload]
+
+SceneManager="*res://Scripts/SceneManager.cs"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "." )

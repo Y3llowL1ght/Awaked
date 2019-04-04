@@ -18,7 +18,9 @@ public class MainMenu : Node
 
         GD.Print("Exiting MainMenu");
         GD.Print("Starting map tools...");
-        GetTree().ChangeScene("res://Scenes/MapTools.tscn");
+        SceneManager smanager = (SceneManager)GetNode("/root/SceneManager");
+        smanager.SwitchScene((PackedScene)GD.Load("res://Scenes/MapTools.tscn"));
+        //GetTree().ChangeScene("res://Scenes/MapTools.tscn");
         
     }
 

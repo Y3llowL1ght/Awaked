@@ -22,11 +22,15 @@ public class GameManager : Node
         MapManager = (MapManager)GetNode("MapManager");
         StructManager = (StructManager)GetNode("StructManager");
 
-        //Initializing them
+        //Initializing MapManager
         MapManager.Initialize();
         MapManager.LoadMap("default");
         
+        //Initializing StructManager
         StructManager.Initialize();
+
+
+        //
         GameSaveManager.CreateSave("test");
         GameSaveManager.LoadSave("test");
     }

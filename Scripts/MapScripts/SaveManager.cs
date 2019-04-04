@@ -2,6 +2,8 @@ using Godot;
 using System;
 using Newtonsoft.Json;
 using MapSystem;
+using StructSystem;
+
 
 namespace SaveSystem
 {
@@ -50,25 +52,29 @@ namespace SaveSystem
         }
 
     }
-    public struct Gamesave
+    
+    public struct GamesaveConfig
     {   // absolute directory path
         public string AbsoluteDirPath;
         public string Savename;
+        public bool Empty;
     }
 
     public static class GameSaveManager{
-    
-        public static Gamesave Save;
         
-        //Creating save directory
+        //Current GamesaveConfig manager is working with (to work should be loaded first)
+        public static GamesaveConfig Save;
+        
+        //Creating save directory, and cfg file in it
         public static void CreateSave(string savename){
                 string dpath = "user://" + savename;
 
                 Directory dir = new Directory();
 
                 //gamesave struct declaration
-                Gamesave gamesave = new Gamesave();
+                GamesaveConfig gamesave = new GamesaveConfig();
                 gamesave.Savename = savename;
+                gamesave.Empty = true;
                 
                 
                 if(!dir.DirExists(dpath)){
@@ -99,23 +105,47 @@ namespace SaveSystem
                 }else{
 
                     //Save directory exists so we just log some data to console
-                    //Reading data into the console from .cfg
+                    //Reading data into the console from cfg.json
                     File cfg = new File();
                     cfg.Open(dpath + "/cfg.json", (int)File.ModeFlags.ReadWrite);
-                    gamesave = JsonConvert.DeserializeObject<Gamesave>(cfg.GetAsText());
+                    gamesave = JsonConvert.DeserializeObject<GamesaveConfig>(cfg.GetAsText());
                     cfg.Close();
                     GD.Print($"{savename} directory already exists: " + gamesave.AbsoluteDirPath);
                 }
         }
 
-
+        //Load GamesaveConfig into manager
         public static void LoadSave(string savename){
             string dpath = "user://" + savename;
             File cfg = new File();
             cfg.Open(dpath + @"/cfg.json", (int)File.ModeFlags.ReadWrite);
-            Save = JsonConvert.DeserializeObject<Gamesave>(cfg.GetAsText());
+            Save = JsonConvert.DeserializeObject<GamesaveConfig>(cfg.GetAsText());
             cfg.Close();
             GD.Print($"Loaded {savename} : " + Save.AbsoluteDirPath);
         }
+
+        //Get GamesaveConfig without loading it to manager
+        public static GamesaveConfig GLoadSave(string savename)
+        {
+            GamesaveConfig save;
+            string dpath = "user://" + savename;
+            File cfg = new File();
+            cfg.Open(dpath + @"/cfg.json", (int)File.ModeFlags.ReadWrite);
+            save = JsonConvert.DeserializeObject<GamesaveConfig>(cfg.GetAsText());
+            cfg.Close();
+            GD.Print($"loaded {savename} : " + Save.AbsoluteDirPath);
+            return save;
+        }
+
+        //Delete all savefiles
+        public static void DeleteSave(string savename){
+            if (Save.Savename == savename)
+            {
+                Save = new GamesaveConfig();
+            }
+            GamesaveConfig save = GLoadSave(savename);
+            System.IO.Directory.Delete(save.AbsoluteDirPath, true);
+        }
+
     }
 }

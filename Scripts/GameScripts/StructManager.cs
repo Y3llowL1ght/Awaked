@@ -33,7 +33,7 @@ namespace StructSystem
         //Setting SMap class
         public void SetupSMap()
         {
-
+            //Redo this
             CurrentSMap = new StructMap(GManager.MapManager.CurrentMap.Size);
             int SizeX = (int)GManager.MapManager.CurrentMap.Size.x;
             int SizeY = (int)GManager.MapManager.CurrentMap.Size.y;
