@@ -1,9 +1,0 @@
-D:\Projects\Awaked\.mono\temp\bin\Tools\Awaked.dll
-D:\Projects\Awaked\.mono\temp\bin\Tools\Awaked.pdb
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csproj.CoreCompileInputs.cache
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.dll
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.pdb
-D:\Projects\Awaked\.mono\temp\bin\Tools\Newtonsoft.Json.dll
-D:\Projects\Awaked\.mono\temp\bin\Tools\Newtonsoft.Json.xml
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csprojAssemblyReference.cache
-D:\Projects\Awaked\.mono\temp\obj\Tools\Awaked.csproj.CopyComplete
